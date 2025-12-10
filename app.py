@@ -55,7 +55,11 @@ df = load_file()
 st.sidebar.header("Фільтри")
 selected_type = st.sidebar.multiselect("Виберіть тип тварини:", df['animal_type'].unique(),
                                        default=df['animal_type'].unique())
-filtered_df = df[df['animal_type'].isin(selected_type)]
+
+if not selected_type:
+    filtered_df = df.copy()
+else:
+    filtered_df = df[df['animal_type'].isin(selected_type)]
 
 st.header("1. Огляд даних")
 col1, col2 = st.columns(2)
