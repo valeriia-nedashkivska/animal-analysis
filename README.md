@@ -18,12 +18,21 @@ git clone https://github.com/valeriia-nedashkivska/animal-analysis.git
 cd animal-analysis
 ```
 
-3. **Встановлення залежностей**
+3. **Створення та активація віртуального середовища**
+```bash
+python -m venv venv
+# ддя Linux/Mac
+source venv/bin/activate
+# для Windows
+venv\Scripts\activate
+```
+
+4. **Встановлення залежностей**
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Запуск застосунку**
+5. **Запуск застосунку**
 ```bash
 streamlit run app.py
 ```
